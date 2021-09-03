@@ -41,6 +41,7 @@ public class CSVHelper {
                         csvRecord.get("FONCTIONS"),
                         csvRecord.get("POSTES"),
                         csvRecord.get("DIRECTIONS"),
+                        csvRecord.get("ORDRE"),
                         csvRecord.get("MATRICULES")
                         );
 

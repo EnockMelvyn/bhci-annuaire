@@ -16,7 +16,7 @@ import java.util.List;
 
 public class ExcelHelper {
     public static String TYPE = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-    static String[] HEADERs = { "DIRECTIONS", "NOMS", "FONCTIONS", "POSTES","MATRICULES" };
+    static String[] HEADERs = { "ORDRE","DIRECTIONS", "NOMS", "FONCTIONS", "POSTES", "MATRICULES" };
     static String SHEET = "Annuaire";
 
     public static boolean hasExcelFormat(MultipartFile file) {
@@ -56,27 +56,30 @@ public class ExcelHelper {
 
                     switch (cellIdx) {
                         case 0:
+                            contact.setNumOrdre(""+Math.round(currentCell.getNumericCellValue()));
+                            //contact.setMatricule(currentCell.getStringCellValue());
+                            break;
+                        case 1:
                             contact.setDirection(currentCell.getStringCellValue());
                             break;
 
-                        case 1:
+                        case 2:
                             contact.setNom(currentCell.getStringCellValue());
                             break;
 
-                        case 2:
+                        case 3:
                             contact.setFonction(currentCell.getStringCellValue());
                             break;
 
-                        case 3:
+                        case 4:
                             contact.setPosteTel(""+Math.round(currentCell.getNumericCellValue()));
                             //contact.setPosteTel(currentCell.getStringCellValue());
                             break;
 
-                        case 4:
+                        case 5:
                             contact.setMatricule(""+Math.round(currentCell.getNumericCellValue()));
                             //contact.setMatricule(currentCell.getStringCellValue());
                             break;
-
 
                         default:
                             break;

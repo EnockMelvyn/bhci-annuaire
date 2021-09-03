@@ -9,5 +9,5 @@ import java.util.Optional;
 @Repository
 public interface ContactRepository extends JpaRepository<Contact, Long> {
 
-    Optional<Contact> findByMatricule(String matricule);
+    Optional<Contact> findByNumOrdre(String numOrdre);
 }

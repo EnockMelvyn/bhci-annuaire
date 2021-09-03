@@ -18,16 +18,18 @@ public class Contact {
     private String fonction;
     private String posteTel;
     private String direction;
+    private String numOrdre;
     private String matricule;
 
     public Contact() {
     }
 
-    public Contact(String nom, String fonction, String posteTel, String direction, String matricule) {
+    public Contact(String nom, String fonction, String posteTel, String direction, String numOrdre,String matricule) {
         this.nom = nom;
         this.fonction = fonction;
         this.posteTel = posteTel;
         this.direction = direction;
+        this.numOrdre = numOrdre;
         this.matricule = matricule;
     }
 
@@ -77,5 +79,13 @@ public class Contact {
 
     public void setMatricule(String matricule) {
         this.matricule = matricule;
+    }
+
+    public String getNumOrdre() {
+        return numOrdre;
+    }
+
+    public void setNumOrdre(String numOrdre) {
+        this.numOrdre = numOrdre;
     }
 }

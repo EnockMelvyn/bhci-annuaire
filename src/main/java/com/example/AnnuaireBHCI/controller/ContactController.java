@@ -82,4 +82,16 @@ public class ContactController {
     public ResponseEntity<List<Contact>> createContact(@RequestBody List<Contact> contact) {
         return new ResponseEntity<>(contactService.createContact(contact), HttpStatus.CREATED);
     }
+
+    @PutMapping("/{idContact}")
+    public ResponseEntity<Contact> updateContact(@PathVariable("idContact") Long idContact,@RequestBody Contact contact) {
+        return new ResponseEntity<>(contactService.updateContact(idContact,contact), HttpStatus.ACCEPTED);
+    }
+
+    @DeleteMapping("/{idContact}")
+    public ResponseEntity<ResponseMessage> updateContact(@PathVariable("idContact") Long idContact) {
+        contactService.deleteContact(idContact);
+        String message = "Contact supprimé!";
+        return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(message));
+    }
 }
